@@ -1,0 +1,13 @@
+.headerBlock {
+    display: flex;
+    align-items: center;
+    height: 100px;
+    background: #F5F5F5;
+    padding-left: 100px;
+}
+
+.headerBlock span{
+    font-family: Roboto;
+    font-size: 24px;
+    color: #757575;
+}
