@@ -4,12 +4,15 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import {Provider} from "react-redux";
-import {applyMiddleware, combineReducers, createStore} from "redux";
 import thunk from "redux-thunk";
 import {BrowserRouter} from "react-router-dom";
+import {applyMiddleware, combineReducers, createStore} from "redux";
+import { reducer as formReducer } from 'redux-form';
+import WeatherReducer from "./components/Redux/WeatherReducer";
 
-const combinedReducers = combineReducers ({
-
+const combinedReducers = combineReducers({
+    form: formReducer,
+    weather: WeatherReducer
 });
 
 let store = createStore(combinedReducers, applyMiddleware(thunk));
@@ -24,7 +27,4 @@ ReactDOM.render(
     document.getElementById("root")
 );
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
