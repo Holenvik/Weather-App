@@ -1,17 +1,20 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import './App.css';
 import NavBar from "./components/NavBar/NavBar";
 import {Route} from "react-router-dom";
 import MainPageContainer from "./components/MainPage/MainPageContainer";
 import SearchPageContainer from "./components/CityInfo/CityInfoContainer";
+import {Container} from "semantic-ui-react";
 
 let App = () => {
     return (
-        <div>
+        <Fragment>
             <NavBar/>
-            <Route exact path="/" component={MainPageContainer}/>
-            <Route exact path="/search" component={SearchPageContainer}/>
-        </div>
+            <Container>
+                <Route exact path="/" component={MainPageContainer}/>
+                <Route exact path="/search" component={SearchPageContainer}/>
+            </Container>
+        </Fragment>
     )
 };
 

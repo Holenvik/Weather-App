@@ -1,4 +1,52 @@
 .memorizedValues {
-    width: 400px;
-    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: Roboto;
+    font-size: 24px;
+    color: #757575;
+    width: 200px;
+}
+
+.submitForm {
+    display: flex;
+    justify-content: center;
+    padding-top: 150px;
+    padding-right: 200px;
+}
+
+.memorizedCity {
+    padding: 8px 0;
+}
+
+.memorizedButton {
+    padding-left: 10px;
+}
+
+@media (max-width: 700px) {
+    .submitForm {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 100px 0 0 0;
+    }
+
+    .memorizedButton {
+        padding: 25px 0;
+        order: 2;
+    }
+
+    .memorizedValues {
+        order: 3;
+    }
+
+    .searchInput {
+        order: 1
+    }
+
+    .memorizedCity {
+
+    }
 }

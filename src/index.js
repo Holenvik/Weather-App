@@ -9,6 +9,7 @@ import {BrowserRouter} from "react-router-dom";
 import {applyMiddleware, combineReducers, createStore} from "redux";
 import { reducer as formReducer } from 'redux-form';
 import WeatherReducer from "./components/Redux/WeatherReducer";
+import 'semantic-ui-css/semantic.min.css'
 
 const combinedReducers = combineReducers({
     form: formReducer,

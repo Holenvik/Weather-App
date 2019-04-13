@@ -4,7 +4,8 @@ import {statuses} from "../STATUSES";
 let initialState = {
     cityForSearch: null,
     cityWeatherInfo: {},
-    status: statuses.NOT_INITIALIZED
+    status: statuses.NOT_INITIALIZED,
+
 };
 
 let appid = "a0a7d7eaf5b391ca0b41647fee93864a";
@@ -65,7 +66,7 @@ export const getCityInfoThunk = () => (dispatch, getState) => {
             dispatch(setStatusWeather(statuses.SUCCESS));
         })
         .catch(warn => {
-            console.log(warn)
+            dispatch(setStatusWeather(statuses.ERROR))
         })
 };
 
