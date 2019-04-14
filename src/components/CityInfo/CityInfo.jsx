@@ -8,7 +8,7 @@ import {statuses} from "../STATUSES";
 let CityInfo = (props) => {
     let {WeatherInfo} = props;
     let {cityForSearch, status, cityWeatherInfo} = WeatherInfo;
-    debugger
+    const [fontSize, setFontSize] = React.useState(50);
     switch (status) {
         case statuses.SUCCESS: {
             return (

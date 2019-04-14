@@ -31,7 +31,8 @@ let MainPage = (props) => {
                     <div className={style.memorizedButton}>
                         <Button type="submit"
                                 disabled={pristine || submitting}
-                                inverted color="blue">
+                                inverted color="blue"
+                                >
                             Search
                         </Button>
                     </div>
