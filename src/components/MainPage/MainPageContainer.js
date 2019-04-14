@@ -1,8 +1,9 @@
 import React from "react";
 import MainPage from "./MainPage";
 import {connect} from "react-redux";
-import {setCityForSearchAC} from "../Redux/WeatherReducer";
+import {setCityForSearchAC, setStatusWeather} from "../Redux/WeatherReducer";
 import {withRouter} from "react-router-dom";
+import {statuses} from "../STATUSES";
 
 class MainPageContainer extends React.Component {
 
@@ -29,6 +30,7 @@ class MainPageContainer extends React.Component {
     };
 
     submit = values => {
+        this.props.setStatusWeather();
         let prevStorage = localStorage.getItem("searchItems");
         localStorage.setItem("searchItems", `${prevStorage}, ${values.cityName}`);
         this.props.setCityForSearch(values.cityName);
@@ -51,6 +53,9 @@ let mapDispatchToProps = (dispatch) => {
 
         setCityForSearch: (city) => {
             dispatch(setCityForSearchAC(city))
+        },
+        setStatusWeather: () => {
+            dispatch(setStatusWeather(statuses.INPROGRESS))
         }
     }
 };

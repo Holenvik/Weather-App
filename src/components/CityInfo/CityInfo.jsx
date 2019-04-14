@@ -1,6 +1,6 @@
 import React from "react";
 import style from "./CityInfo.module.css"
-import {ClipLoader, SyncLoader} from "react-spinners";
+import {SyncLoader} from "react-spinners";
 import {Button, Card, Container, Message} from "semantic-ui-react";
 import {NavLink} from "react-router-dom";
 import {statuses} from "../STATUSES";
@@ -8,40 +8,14 @@ import {statuses} from "../STATUSES";
 let CityInfo = (props) => {
     let {WeatherInfo} = props;
     let {cityForSearch, status, cityWeatherInfo} = WeatherInfo;
-    let kek = () => {
-        return (
-            <>
-                <div className={style.cityName}>
-                    <span>
-                        {cityWeatherInfo.name}
-                    </span>
-                </div>
-                <div className={style.cityName}>
-                    <span>
-                        {`Current: ${cityWeatherInfo.main.temp}°`}
-                    </span>
-                </div>
-                <div className={style.cityName}>
-                    <span>
-                        {`Wind Speed: ${cityWeatherInfo.wind.speed} m/hr`}
-                    </span>
-                </div>
-                <div className={style.cityName}>
-                    <span>
-                        {`Clouds: ${cityWeatherInfo.weather[0].description.toUpperCase()}`}
-                    </span>
-                </div>
-            </>
-        )
-    }
-
+    debugger
     switch (status) {
-
         case statuses.SUCCESS: {
             return (
                 <Container className={style.cityInfoCard}>
                     <Card color="blue"
-                          centered={true}>
+                          centered={true}
+                          raised={true}>
                         <Card.Content textAlign="center">
                             <Card.Header>
                                 {cityWeatherInfo.name}
@@ -67,7 +41,7 @@ let CityInfo = (props) => {
                 <Container className={style.errorMessage}>
                     <Message error
                              size='massive'>
-                        <Message.Header>We can't find city {cityForSearch}</Message.Header>
+                        <Message.Header>We can't find {cityForSearch}</Message.Header>
                         <NavLink to="/">
                             <Button type="submit"
                                     inverted color="red">

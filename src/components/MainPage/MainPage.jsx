@@ -13,7 +13,10 @@ let MainPage = (props) => {
                     <div className={style.memorizedValues}>
                         <p>Hints:</p>
                         {valuesToTip && valuesToTip.map((el, id) => {
-                            return <div className={style.memorizedCity}>{`${id + 1}. ${el}`}</div>
+                            return <div className={style.memorizedCity}
+                            key={`${el} ${id}`}>
+                                {`${id + 1}. ${el}`}
+                            </div>
                         })}
                     </div>
                     <Field name="cityName"

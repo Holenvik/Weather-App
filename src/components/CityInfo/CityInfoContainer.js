@@ -3,6 +3,7 @@ import CityInfo from "./CityInfo";
 import {connect} from "react-redux";
 import {withRouter} from "react-router-dom";
 import {getCityInfoThunk} from "../Redux/WeatherReducer";
+import {statuses} from "../STATUSES";
 
 class CityInfoContainer extends React.Component {
 
@@ -10,6 +11,10 @@ class CityInfoContainer extends React.Component {
         if (this.props.WeatherInfo.cityForSearch === null) {
             this.props.history.push("/");
         }
+    }
+
+    shouldComponentUpdate(nextProps, nextState) {
+        return nextProps.WeatherInfo.status !== statuses.INPROGRESS
     }
 
     componentDidMount() {
